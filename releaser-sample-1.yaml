@@ -1,19 +1,22 @@
 apiVersion: devops.kubesphere.io/v1alpha1
 kind: Releaser
 metadata:
+  creationTimestamp: null
   name: releaser-sample-1
 spec:
-  version: v0.0.2
   gitOps:
     enable: true
     repository:
       address: https://github.com/linuxsuren-bot/linuxsuren-releaser
-      name: test
       branch: master
+      name: test
+  phase: done
   repositories:
-    - name: test
-      address: https://github.com/linuxsuren-bot/test
-      action: release
+  - action: release
+    address: https://github.com/linuxsuren-bot/test
+    name: test
   secret:
     name: test-git
     namespace: default
+  version: v0.0.2
+status: {}
