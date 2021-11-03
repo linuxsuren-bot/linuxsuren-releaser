@@ -10,15 +10,15 @@ spec:
       address: https://github.com/linuxsuren-bot/linuxsuren-releaser
       branch: master
       name: test
-  phase: done
+  phase: draft
   repositories:
   - action: release
     address: https://github.com/linuxsuren-bot/test
     branch: master
     name: test
-    version: v0.0.7
+    version: v0.0.8
   secret:
     name: test-git
     namespace: default
-  version: v0.0.7
+  version: v0.0.8
 status: {}
