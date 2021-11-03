@@ -10,7 +10,7 @@ spec:
       address: https://github.com/linuxsuren-bot/linuxsuren-releaser
       branch: master
       name: test
-  phase: draft
+  phase: done
   repositories:
   - action: release
     address: https://github.com/linuxsuren-bot/test
