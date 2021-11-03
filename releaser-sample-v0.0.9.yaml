@@ -2,7 +2,7 @@ apiVersion: devops.kubesphere.io/v1alpha1
 kind: Releaser
 metadata:
   creationTimestamp: null
-  name: releaser-sample-4
+  name: releaser-sample-v0.0.9
 spec:
   gitOps:
     enable: true
