@@ -33,6 +33,7 @@ spec:
     namespace: linuxsuren-bot
   version: v0.0.18
 status:
+  completionTime: "2021-11-06T14:48:04Z"
   conditions:
   - conditionType: release
     message: https://github.com/linuxsuren-bot/test was released
