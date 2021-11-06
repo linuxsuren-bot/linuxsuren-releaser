@@ -26,7 +26,7 @@ spec:
     branch: master
     name: jenkins-cli
     provider: github
-    version: v0.0.20
+    version: v0.0.34
   secret:
     name: github
     namespace: linuxsuren-bot
