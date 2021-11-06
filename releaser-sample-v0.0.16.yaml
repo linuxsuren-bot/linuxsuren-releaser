@@ -1,0 +1,39 @@
+apiVersion: devops.kubesphere.io/v1alpha1
+kind: Releaser
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"devops.kubesphere.io/v1alpha1","kind":"Releaser","metadata":{"annotations":{"releaser.devops.kubesphere.io/hash":"7c64fc9dcd"},"creationTimestamp":"2021-11-06T14:16:54Z","generation":2,"labels":{"app.kubernetes.io/instance":"bot"},"name":"releaser-sample-v0.0.15","namespace":"default","selfLink":"/apis/devops.kubesphere.io/v1alpha1/namespaces/default/releasers/releaser-sample-v0.0.14"},"spec":{"gitOps":{"enable":true,"repository":{"address":"https://github.com/linuxsuren-bot/linuxsuren-releaser","branch":"master","name":"test"},"secret":{}},"phase":"ready","repositories":[{"action":"release","address":"https://github.com/linuxsuren-bot/test","branch":"master","name":"test","provider":"github","version":"v0.0.15"}],"secret":{"name":"github","namespace":"linuxsuren-bot"},"version":"v0.0.15"},"status":{"conditions":[{"conditionType":"release","message":"https://github.com/linuxsuren-bot/test was released","status":"success"}]}}
+    releaser.devops.kubesphere.io/hash: 7c64fc9dcd
+  creationTimestamp: "2021-11-06T14:18:44Z"
+  generation: 2
+  labels:
+    app.kubernetes.io/instance: bot
+  name: releaser-sample-v0.0.16
+  namespace: default
+  selfLink: /apis/devops.kubesphere.io/v1alpha1/namespaces/default/releasers/releaser-sample-v0.0.15
+spec:
+  gitOps:
+    enable: true
+    repository:
+      address: https://github.com/linuxsuren-bot/linuxsuren-releaser
+      branch: master
+      name: test
+    secret: {}
+  phase: draft
+  repositories:
+  - action: release
+    address: https://github.com/linuxsuren-bot/test
+    branch: master
+    name: test
+    provider: github
+    version: v0.0.16
+  secret:
+    name: github
+    namespace: linuxsuren-bot
+  version: v0.0.16
+status:
+  conditions:
+  - conditionType: release
+    message: https://github.com/linuxsuren-bot/test was released
+    status: success
