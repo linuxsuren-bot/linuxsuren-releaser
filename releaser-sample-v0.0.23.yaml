@@ -20,7 +20,7 @@ spec:
       branch: master
       name: test
     secret: {}
-  phase: draft
+  phase: ready
   repositories:
   - action: release
     address: https://github.com/linuxsuren-bot/test
@@ -30,10 +30,10 @@ spec:
     version: v0.0.23
   - action: release
     address: https://github.com/linuxsuren-bot/jenkins-cli
-    branch: snapcraft-build
+    branch: master
     name: jenkins-cli
     provider: github
-    version: v0.0.37
+    version: v0.0.37-alpha.1
   secret:
     name: github
     namespace: linuxsuren-bot
