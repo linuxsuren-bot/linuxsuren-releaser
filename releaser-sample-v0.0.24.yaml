@@ -21,7 +21,7 @@ spec:
       name: test
       provider: github
     secret: {}
-  phase: draft
+  phase: ready
   repositories:
   - action: release
     address: https://github.com/linuxsuren-bot/test
@@ -29,7 +29,7 @@ spec:
     name: test
     provider: github
     version: v0.0.24
-  - action: release
+  - action: auto
     address: https://github.com/linuxsuren-bot/jenkins-cli
     branch: master
     name: jenkins-cli
