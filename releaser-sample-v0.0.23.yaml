@@ -40,7 +40,7 @@ spec:
     namespace: linuxsuren-bot
   version: v0.0.23
 status:
-  completionTime: "2021-11-07T13:24:01Z"
+  completionTime: "2021-11-07T13:24:25Z"
   conditions:
   - conditionType: release
     message: https://github.com/linuxsuren-bot/test was released
