@@ -19,13 +19,13 @@ spec:
   repositories:
   - action: release
     address: https://github.com/linuxsuren-bot/test
-    branch: main1
+    branch: main
     name: test
     provider: github
     version: v0.0.32
   - action: auto
     address: https://github.com/linuxsuren-bot/jenkins-cli
-    branch: master2
+    branch: master
     name: jenkins-cli
     provider: github
     version: v0.0.37-alpha.10
