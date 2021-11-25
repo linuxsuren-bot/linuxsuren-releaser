@@ -19,7 +19,7 @@ spec:
   repositories:
   - action: release
     address: https://github.com/linuxsuren-bot/test
-    branch: main1
+    branch: main
     name: test
     provider: github
     version: v0.0.31
