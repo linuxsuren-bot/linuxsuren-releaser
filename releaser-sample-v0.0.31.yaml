@@ -15,11 +15,11 @@ spec:
       name: test
       provider: github
     secret: {}
-  phase: draft
+  phase: ready
   repositories:
   - action: release
     address: https://github.com/linuxsuren-bot/test
-    branch: main
+    branch: main1
     name: test
     provider: github
     version: v0.0.31
