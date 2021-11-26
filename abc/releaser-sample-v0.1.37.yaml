@@ -1,11 +1,17 @@
 apiVersion: devops.kubesphere.io/v1alpha1
 kind: Releaser
 metadata:
-  creationTimestamp: "2021-11-26T08:14:24Z"
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"devops.kubesphere.io/v1alpha1","kind":"Releaser","metadata":{"annotations":{},"creationTimestamp":"2021-11-26T08:14:24Z","labels":{"app.kubernetes.io/instance":"test"},"name":"releaser-sample-v0.1.37","namespace":"default"},"spec":{"gitOps":{"enable":true,"repository":{"address":"https://github.com/linuxsuren-bot/linuxsuren-releaser","branch":"master","name":"test","provider":"github"},"secret":{}},"phase":"ready","repositories":[{"action":"release","address":"https://github.com/linuxsuren-bot/test","branch":"main","name":"test","provider":"github","version":"v0.1.37"},{"action":"auto","address":"https://github.com/linuxsuren-bot/jenkins-cli","branch":"master","name":"jenkins-cli","provider":"github","version":"v0.1.37-alpha.15"}],"secret":{"name":"github","namespace":"linuxsuren-bot"},"version":"v0.1.37"},"status":{}}
+    releaser.devops.kubesphere.io/hash: 66446df888
+  creationTimestamp: "2021-11-26T08:20:50Z"
+  generation: 1
   labels:
     app.kubernetes.io/instance: test
   name: releaser-sample-v0.1.37
   namespace: default
+  selfLink: /apis/devops.kubesphere.io/v1alpha1/namespaces/default/releasers/releaser-sample-v0.1.37
 spec:
   gitOps:
     enable: true
@@ -15,7 +21,7 @@ spec:
       name: test
       provider: github
     secret: {}
-  phase: ready
+  phase: done
   repositories:
   - action: release
     address: https://github.com/linuxsuren-bot/test
@@ -33,4 +39,11 @@ spec:
     name: github
     namespace: linuxsuren-bot
   version: v0.1.37
-status: {}
+status:
+  conditions:
+  - conditionType: release
+    message: https://github.com/linuxsuren-bot/test was released
+    status: success
+  - conditionType: release
+    message: https://github.com/linuxsuren-bot/jenkins-cli was released
+    status: success
