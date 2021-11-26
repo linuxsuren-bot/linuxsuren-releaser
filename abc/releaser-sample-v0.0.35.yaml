@@ -1,0 +1,36 @@
+apiVersion: devops.kubesphere.io/v1alpha1
+kind: Releaser
+metadata:
+  creationTimestamp: "2021-11-26T06:52:56Z"
+  labels:
+    app.kubernetes.io/instance: test
+  name: releaser-sample-v0.1.35
+  namespace: default
+spec:
+  gitOps:
+    enable: true
+    repository:
+      address: https://github.com/linuxsuren-bot/linuxsuren-releaser
+      branch: master
+      name: test
+      provider: github
+    secret: {}
+  phase: draft
+  repositories:
+  - action: release
+    address: https://github.com/linuxsuren-bot/test
+    branch: main
+    name: test
+    provider: github
+    version: v0.1.35
+  - action: auto
+    address: https://github.com/linuxsuren-bot/jenkins-cli
+    branch: master
+    name: jenkins-cli
+    provider: github
+    version: v0.1.37-alpha.13
+  secret:
+    name: github
+    namespace: linuxsuren-bot
+  version: v0.1.35
+status: {}
