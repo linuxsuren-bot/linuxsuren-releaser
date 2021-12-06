@@ -1,27 +1,38 @@
-
-apiVersion: devops.kubesphere.io/v1alpha1                                                                                                                                                                                                │
-kind: Releaser                                                                                                                                                                                                                           │
-metadata:                                                                                                                                                                                                                                │                                                                                                                                                                                                     │
-  name: releaser-sample-v0.1.39-rc0                                                                                                                                                                                                      │
-  namespace: argocd                                                                                                                                                                                                                      │                                                                                                                                                                                            │
-spec:                                                                                                                                                                                                                                    │
-  gitOps:                                                                                                                                                                                                                                │
-    enable: true                                                                                                                                                                                                                         │
-    repository:                                                                                                                                                                                                                          │
-      address: https://github.com/linuxsuren-bot/linuxsuren-releaser                                                                                                                                                                     │
-      branch: master                                                                                                                                                                                                                     │
-      name: test                                                                                                                                                                                                                         │
-      provider: github                                                                                                                                                                                                                   │
-    secret: {}                                                                                                                                                                                                                           │
-  phase: ready                                                                                                                                                                                                                           │
-  repositories:                                                                                                                                                                                                                          │
-  - action: release                                                                                                                                                                                                                      │
-    address: https://github.com/linuxsuren-bot/test                                                                                                                                                                                      │
-    branch: v0.1.39                                                                                                                                                                                                                      │
-    name: test                                                                                                                                                                                                                           │
-    provider: github                                                                                                                                                                                                                     │
-    version: v0.1.39-rc2                                                                                                                                                                                                                 │
-  secret:                                                                                                                                                                                                                                │
-    name: test-git                                                                                                                                                                                                                       │
-    namespace: default                                                                                                                                                                                                                   │
+apiVersion: devops.kubesphere.io/v1alpha1
+kind: Releaser
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"devops.kubesphere.io/v1alpha1","kind":"Releaser","metadata":{"annotations":{},"name":"releaser-sample-v0.1.39-rc0","namespace":"argocd"},"spec":{"gitOps":{"enable":true,"repository":{"address":"https://github.com/linuxsuren-bot/linuxsuren-releaser","branch":"master","name":"test"}},"repositories":[{"action":"release","address":"https://github.com/linuxsuren-bot/test","branch":"v0.1.39","name":"test","provider":"github","version":"v0.1.39-rc0"}],"secret":{"name":"test-git","namespace":"default"},"version":"v0.1.39-rc0"}}
+    releaser.devops.kubesphere.io/hash: c85979dd6
+  creationTimestamp: "2021-12-06T03:14:43Z"
+  generation: 4
+  name: releaser-sample-v0.1.39-rc0
+  namespace: argocd
+  selfLink: /apis/devops.kubesphere.io/v1alpha1/namespaces/argocd/releasers/releaser-sample-v0.1.39-rc0
+spec:
+  gitOps:
+    enable: true
+    repository:
+      address: https://github.com/linuxsuren-bot/linuxsuren-releaser
+      branch: master
+      name: test
+      provider: github
+    secret: {}
+  phase: done
+  repositories:
+  - action: release
+    address: https://github.com/linuxsuren-bot/test
+    branch: v0.1.39
+    name: test
+    provider: github
+    version: v0.1.39-rc2
+  secret:
+    name: test-git
+    namespace: default
   version: v0.1.39-rc0
+status:
+  conditions:
+  - conditionType: release
+    message: https://github.com/linuxsuren-bot/test was released
+    status: success
