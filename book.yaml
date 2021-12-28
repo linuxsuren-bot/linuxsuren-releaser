@@ -1,0 +1,5 @@
+kind: ConfigMap
+metadata:
+  annotations:
+    argocd.argoproj.io/compare-options: IgnoreExtraneous
+  name: book
